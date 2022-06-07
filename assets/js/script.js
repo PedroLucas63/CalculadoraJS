@@ -16,19 +16,19 @@ function menu(){
         //Verificação da função escolhida:
         switch(selecao){
             case "1":
-                console.log("Somar");
+                var resultado = Somar();
                 break;
 
             case "2":
-                console.log("Subtrair");
+                var resultado = Subtrair();
                 break;
 
             case "3":
-                console.log("Multiplicar");
+                var resultado = Multiplicar();
                 break;
 
             case "4":
-                console.log("Dividir");
+                var resultado = Dividir();
                 break;
 
             case "0":
@@ -39,7 +39,57 @@ function menu(){
                 alert("Nenhuma opção selecionada!");
                 break;
         }
+
+        //Exibição da respostas:
+        alert(resultado);
+
     }while(selecao != 5);
+}
+
+//Função de pedir os valores:
+function PedirNumeros(){
+    //Pedido dos dois valores:
+    var numero1 = Number(prompt("Digite um número:"));
+    var numero2 = Number(prompt("Digite outro número:"));
+
+    //Retorno dos valores pedidos:
+    return numero1, numero2;
+}
+
+//Função de soma de dois valores:
+function Somar(){
+    //Pedir valores:
+    var valores = PedirNumeros();
+
+    //Retorno da função formatada:
+    return `${valores[0]} + ${valores[1]} = ${valores[0] + valores[1]}`;
+}
+
+//Função de soma de dois valores:
+function Subtrair(){
+    //Pedir valores:
+    var valores = PedirNumeros();
+
+    //Retorno da função formatada:
+    return `${valores[0]} - ${valores[1]} = ${valores[0] - valores[1]}`;
+}
+
+//Função de soma de dois valores:
+function Multiplicar(){
+    //Pedir valores:
+    var valores = PedirNumeros();
+
+    //Retorno da função formatada:
+    return `${valores[0]} × ${valores[1]} = ${valores[0] * valores[1]}`;
+}
+
+//Função de soma de dois valores:
+function Dividir(){
+    //Pedir valores:
+    var valores = PedirNumeros();
+
+    //Retorno da função formatada:
+    return `${valores[0]} ÷ ${valores[1]} = ${valores[0] / valores[1]}`;
 }
 
 //Chamada da função de menu:
