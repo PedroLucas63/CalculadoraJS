@@ -43,24 +43,23 @@ function menu(){
         //Exibição da respostas:
         alert(resultado);
 
-    }while(selecao != 5);
+    }while(selecao != 0);
 }
 
 //Função de pedir os valores:
 function PedirNumeros(){
     //Pedido dos dois valores:
-    var numero1 = Number(prompt("Digite um número:"));
-    var numero2 = Number(prompt("Digite outro número:"));
+    var numero1 = parseFloat(prompt("Digite um número:"));
+    var numero2 = parseFloat(prompt("Digite outro número:"));
 
     //Retorno dos valores pedidos:
-    return numero1, numero2;
+    return [numero1, numero2];
 }
 
 //Função de soma de dois valores:
 function Somar(){
     //Pedir valores:
     var valores = PedirNumeros();
-
     //Retorno da função formatada:
     return `${valores[0]} + ${valores[1]} = ${valores[0] + valores[1]}`;
 }
