@@ -11,38 +11,32 @@ function menu(){
                     `\n0 ${'.'.repeat(70)} Sair`;
 
         //Pedido da função desejada:
-        var selecao = prompt(texto);
+        var selecao = parseInt(prompt(texto));
 
         //Verificação da função escolhida:
-        switch(selecao){
-            case "1":
-                var resultado = Somar();
-                break;
-
-            case "2":
-                var resultado = Subtrair();
-                break;
-
-            case "3":
-                var resultado = Multiplicar();
-                break;
-
-            case "4":
-                var resultado = Dividir();
-                break;
-
-            case "0":
-                console.log("Sair");
-                break;
-            
-            default:
-                alert("Nenhuma opção selecionada!");
-                break;
+        if(selecao == 0){
+            alert("Você está saindo!");
         }
+        else if(selecao >= 1 && selecao <= 4){
+            //Pedido dos valores:
+            var valores = PedirNumeros();
 
-        //Exibição da respostas:
-        alert(resultado);
-
+            //Teste da função correta:
+            if(selecao == 1)
+                var resultado = Somar(valores);
+            else if(selecao == 2)
+                var resultado = Subtrair(valores);
+            else if(selecao == 3)
+                var resultado = Multiplicar(valores);
+            else
+                var resultado = Dividir(valores);
+            
+            //Exibição do resultado:
+            alert(resultado);
+        }
+        else{
+            alert("Nenhuma opção selecionada!");
+        }
     }while(selecao != 0);
 }
 
@@ -57,36 +51,25 @@ function PedirNumeros(){
 }
 
 //Função de soma de dois valores:
-function Somar(){
-    //Pedir valores:
-    var valores = PedirNumeros();
+function Somar(valores){
     //Retorno da função formatada:
     return `${valores[0]} + ${valores[1]} = ${valores[0] + valores[1]}`;
 }
 
 //Função de soma de dois valores:
-function Subtrair(){
-    //Pedir valores:
-    var valores = PedirNumeros();
-
+function Subtrair(valores){
     //Retorno da função formatada:
     return `${valores[0]} - ${valores[1]} = ${valores[0] - valores[1]}`;
 }
 
 //Função de soma de dois valores:
-function Multiplicar(){
-    //Pedir valores:
-    var valores = PedirNumeros();
-
+function Multiplicar(valores){
     //Retorno da função formatada:
     return `${valores[0]} × ${valores[1]} = ${valores[0] * valores[1]}`;
 }
 
 //Função de soma de dois valores:
-function Dividir(){
-    //Pedir valores:
-    var valores = PedirNumeros();
-
+function Dividir(valores){
     //Retorno da função formatada:
     return `${valores[0]} ÷ ${valores[1]} = ${valores[0] / valores[1]}`;
 }
